@@ -1,6 +1,12 @@
 public class Player {
-    //what cards you have - array of cards
+    Card[] hand = new Card[10]; //your hand as an array of different cards
+    String name;
     int handValue;
     boolean isDealer;
-    //ability to hit or stay
+    void hit (){
+
+    }
+    void stay(){
+
+    }
 }
