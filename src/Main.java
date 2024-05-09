@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 public class Main {
     Card[] deck = new Card[52];
     public Main() {
@@ -8,15 +5,18 @@ public class Main {
         for(int x = 0; x<=51; x++) {
             deck[x] = new Card();
         }
+        initializeDeck();
         shuffle();
         for(int x =0; x<=51; x++) {
             deck[x].printInfo();
         }
+        Player p = new Player();
+        p.printInfo();
     }
     public static void main(String[] args) {
         new Main();
     }
-    void shuffle() {
+    void initializeDeck() {
         for (int suits = 1; suits <= 4; suits++) {
             for (int cardnumber = 1; cardnumber <= 13; cardnumber++) {
                 if (suits == 1) {
@@ -46,8 +46,13 @@ public class Main {
                 }
             }
         }
-        List<Card> cardList = Arrays.asList(deck);
-        Collections.shuffle(cardList);
-        cardList.toArray(deck);
+    }
+    void shuffle(){
+        for(int x = 51; x>0; x--) { //note: since I'm not swapping a card twice, this allows for better randomness.
+            int randomIndex = (int) (Math.random() * 52);
+            Card temp = deck[x];
+            deck[x] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
     }
 }

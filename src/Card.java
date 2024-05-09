@@ -8,12 +8,12 @@ public class Card {
     }
     void printInfo(){
         if(value<10) {
-            System.out.println(value+" of "+suit);
+            System.out.println(value+" of "+suit+" - "+value);
         } else{
             if(cardType.equals("number")){
-                System.out.println("10 of "+suit);
+                System.out.println("10 of "+suit+" - "+value);
             } else{
-                System.out.println(cardType+" of "+suit);
+                System.out.println(cardType+" of "+suit+" - "+value);
             }
         }
     }

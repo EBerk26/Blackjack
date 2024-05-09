@@ -9,4 +9,18 @@ public class Player {
     void stay(){
 
     }
+    public Player(){
+        name = "Eli";
+        handValue = 0;
+        isDealer = false;
+    }
+    void printInfo(){
+        String dealerString;
+        if(isDealer){
+            dealerString = "";
+        } else{
+            dealerString = "not ";
+        }
+        System.out.println(name+" has a hand value of "+handValue+" and is "+dealerString+"the dealer.");
+    }
 }
