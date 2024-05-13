@@ -1,7 +1,15 @@
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 public class Main {
     Card[] deck = new Card[52];
+    Player player = new Player();
     public Main() {
         System.out.println("Welcome to Eli's Casino!");
+        System.out.println("What's your name?");
+        Scanner scanner = new Scanner(System.in);
+        player.name = scanner.next();
         for(int x = 0; x<=51; x++) {
             deck[x] = new Card();
         }
@@ -10,8 +18,8 @@ public class Main {
         for(int x =0; x<=51; x++) {
             deck[x].printInfo();
         }
-        Player p = new Player();
-        p.printInfo();
+        deal();
+        player.printInfo();
     }
     public static void main(String[] args) {
         new Main();
@@ -48,11 +56,16 @@ public class Main {
         }
     }
     void shuffle(){
-        for(int x = 51; x>0; x--) { //note: since I'm not swapping a card twice, this allows for better randomness.
-            int randomIndex = (int) (Math.random() * 52);
-            Card temp = deck[x];
-            deck[x] = deck[randomIndex];
-            deck[randomIndex] = temp;
+        List<Card> cardList = Arrays.asList(deck);
+        Collections.shuffle(cardList);
+        cardList.toArray(deck);
+    }
+    void deal(){
+        //first and second card
+        for(int x = 0;x<=1;x++){
+            player.hand[x]=deck[x];
+            deck[x].inDeck = false;
         }
+        player.updateHandValue();
     }
 }
