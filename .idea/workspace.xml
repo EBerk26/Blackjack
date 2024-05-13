@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="HW for 5/13 - Player.printInfo now runs Card.printInfo for every card in the hand that has a nonzero value.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="Class 5/13 - Created a deal method and added a Scanner for the player to enter their name." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715465099521</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Class 5/13 - Created a deal method and added a Scanner for the player to enter their name.">
+      <option name="closed" value="true" />
+      <created>1715620210597</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715620210597</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,6 +121,7 @@
     <MESSAGE value="HW for 5/8 - if statements are not present in card constructor but rather in the deck initalization in Main." />
     <MESSAGE value="HW for 5/13 - constructor and printInfo for PLayer.java" />
     <MESSAGE value="HW for 5/13 - Player.printInfo now runs Card.printInfo for every card in the hand that has a nonzero value." />
-    <option name="LAST_COMMIT_MESSAGE" value="HW for 5/13 - Player.printInfo now runs Card.printInfo for every card in the hand that has a nonzero value." />
+    <MESSAGE value="Class 5/13 - Created a deal method and added a Scanner for the player to enter their name." />
+    <option name="LAST_COMMIT_MESSAGE" value="Class 5/13 - Created a deal method and added a Scanner for the player to enter their name." />
   </component>
 </project>

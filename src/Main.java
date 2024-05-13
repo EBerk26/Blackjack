@@ -5,7 +5,10 @@ import java.util.List;
 public class Main {
     Card[] deck = new Card[52];
     Player player = new Player();
+    Player dealer = new Player();
     public Main() {
+        dealer.name = "Jeffrey the Dealer";
+        dealer.isDealer = true;
         System.out.println("Welcome to Eli's Casino!");
         System.out.println("What's your name?");
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +23,7 @@ public class Main {
         }
         deal();
         player.printInfo();
+        dealer.printInfo();
     }
     public static void main(String[] args) {
         new Main();
@@ -66,6 +70,11 @@ public class Main {
             player.hand[x]=deck[x];
             deck[x].inDeck = false;
         }
+        for(int x = 2;x<=3;x++){
+            dealer.hand[x-2]=deck[x];
+            deck[x].inDeck = false;
+        }
         player.updateHandValue();
+        dealer.updateHandValue();
     }
 }
