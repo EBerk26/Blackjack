@@ -1,7 +1,10 @@
+import java.util.Arrays;
+
 public class Player {
     Card[] hand = new Card[10]; //your hand as an array of different cards
     String name;
     int handValue;
+    int numCards;
     boolean isDealer;
     void hit (){
 
@@ -15,6 +18,7 @@ public class Player {
         }
         name = "Eli";
         handValue = 0;
+        numCards = 0;
         isDealer = false;
     }
     void printInfo(){
@@ -37,5 +41,10 @@ public class Player {
         for (int x = 0;x<hand.length;x++){
             handValue+=hand[x].value;
         }
+    }
+    void addCard(Card param_card){
+        hand[numCards] = param_card;
+        numCards+=1;
+        updateHandValue();
     }
 }

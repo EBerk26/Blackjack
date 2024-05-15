@@ -18,9 +18,9 @@ public class Main {
         }
         initializeDeck();
         shuffle();
-        for(int x =0; x<=51; x++) {
+        /*for(int x =0; x<=51; x++) {
             deck[x].printInfo();
-        }
+        }*/
         deal();
         player.printInfo();
         dealer.printInfo();
@@ -67,11 +67,11 @@ public class Main {
     void deal(){
         //first and second card
         for(int x = 0;x<=1;x++){
-            player.hand[x]=deck[x];
+            player.addCard(deck[x]);
             deck[x].inDeck = false;
         }
         for(int x = 2;x<=3;x++){
-            dealer.hand[x-2]=deck[x];
+            dealer.addCard(deck[x]);
             deck[x].inDeck = false;
         }
         player.updateHandValue();
