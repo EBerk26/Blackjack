@@ -6,6 +6,7 @@ public class Main {
     Card[] deck = new Card[52];
     Player player = new Player();
     Player dealer = new Player();
+    public int numCardsDealt = 0;
     public Main() {
         dealer.name = "Jeffrey the Dealer";
         dealer.isDealer = true;
@@ -22,8 +23,7 @@ public class Main {
             deck[x].printInfo();
         }*/
         deal();
-        player.printInfo();
-        dealer.printInfo();
+        play();
     }
     public static void main(String[] args) {
         new Main();
@@ -68,13 +68,51 @@ public class Main {
         //first and second card
         for(int x = 0;x<=1;x++){
             player.addCard(deck[x]);
-            deck[x].inDeck = false;
+            numCardsDealt++;
         }
         for(int x = 2;x<=3;x++){
             dealer.addCard(deck[x]);
-            deck[x].inDeck = false;
+            numCardsDealt++;
         }
         player.updateHandValue();
         dealer.updateHandValue();
+    }
+    void play(){
+        Scanner scanner = new Scanner(System.in);
+        player.printInfo();
+        dealer.printInfo();
+        System.out.println("Do you want to stand or hit?");
+        String decision = scanner.next();
+        if(decision.equals("hit")){
+            System.out.println("You decided to hit.");
+            player.addCard(deck[numCardsDealt]);
+            System.out.print("The card you received is the ");
+            deck[numCardsDealt].printInfoSameLine();
+            System.out.println();
+            if(player.handValue>21){
+                System.out.println("You busted!");
+            } else {
+                numCardsDealt++;
+                play();
+            }
+        } else if (decision.equals("stand")){
+            System.out.println("You decided to stand.");
+            while(dealer.handValue<17){
+                /*try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }*/
+                dealer.addCard(deck[numCardsDealt]);
+                numCardsDealt++;
+            }
+            if(dealer.handValue>21){
+                System.out.println(dealer.name+" busted!");
+            } else{
+                System.out.println(dealer.name+" has a hand value of "+dealer.handValue);
+                System.out.println(player.name+" has a hand value of "+player.handValue);
+            }
+            //TODO: compare values at end
+        }
     }
 }
