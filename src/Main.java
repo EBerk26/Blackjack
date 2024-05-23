@@ -2,12 +2,13 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-public class Main {
+class Main {
     Card[] deck = new Card[52];
     Player player = new Player();
     Player dealer = new Player();
-    public int numCardsDealt = 0;
-    public Main() {
+    int numCardsDealt = 0;
+
+     Main() {
         dealer.name = "Jeffrey the Dealer";
         dealer.isDealer = true;
         System.out.println("Welcome to Eli's Casino!");
@@ -19,9 +20,6 @@ public class Main {
         }
         initializeDeck();
         shuffle();
-        /*for(int x =0; x<=51; x++) {
-            deck[x].printInfo();
-        }*/
         deal();
         play();
     }
@@ -84,7 +82,7 @@ public class Main {
         System.out.println("Do you want to stand or hit?");
         String decision = scanner.next();
         if(decision.equals("hit")){
-            System.out.println("You decided to hit.");
+            System.out.println("You decided to hit");
             player.addCard(deck[numCardsDealt]);
             System.out.print("The card you received is the ");
             deck[numCardsDealt].printInfoSameLine();
@@ -96,23 +94,44 @@ public class Main {
                 play();
             }
         } else if (decision.equals("stand")){
-            System.out.println("You decided to stand.");
+            System.out.println("You decided to stand");
+            pause(400);
+            System.out.print(dealer.name+"'s hidden card was ");
+            dealer.hand[1].printInfoSameLine();
+            System.out.println();
+            System.out.println(dealer.name+" has "+dealer.handValue+" points");
             while(dealer.handValue<17){
-                /*try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }*/
+                pause(1000);
                 dealer.addCard(deck[numCardsDealt]);
+                System.out.print(dealer.name+" drew the ");
+                dealer.hand[dealer.numCards-1].printInfoSameLine();
+                System.out.println();
+                System.out.println(dealer.name+" now has "+dealer.handValue+" points");
                 numCardsDealt++;
             }
             if(dealer.handValue>21){
+                pause(400);
                 System.out.println(dealer.name+" busted!");
             } else{
+                pause(400);
+                System.out.println(dealer.name+" stands");
                 System.out.println(dealer.name+" has a hand value of "+dealer.handValue);
                 System.out.println(player.name+" has a hand value of "+player.handValue);
+                if(dealer.handValue> player.handValue){
+                    System.out.println(dealer.name+" wins!");
+                } else if (dealer.handValue< player.handValue){
+                    System.out.println(player.name+" wins! Congratulations!");
+                } else{
+                    System.out.println("Push! No one wins this round");
+                }
             }
-            //TODO: compare values at end
+        }
+    }
+    void pause(int milliseconds){
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e){
+            //ignore the exception
         }
     }
 }

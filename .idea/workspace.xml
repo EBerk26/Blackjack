@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="Class 5/15: created the addCard method that adds a card to a Player.hand. This method is now implemented in Main.deal.">
+    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="HW for 5/23: fixed the hand array going out of bounds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -140,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715814773691</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="HW for 5/23: fixed the hand array going out of bounds">
+      <option name="closed" value="true" />
+      <created>1716413008191</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716413008191</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -153,16 +161,7 @@
     <MESSAGE value="Class 5/13 - Created a deal method and added a Scanner for the player to enter their name." />
     <MESSAGE value="HW for 5/15: Added a new player object called dealer that's created in Main. dealer is dealt the next two cards in Main.deal" />
     <MESSAGE value="Class 5/15: created the addCard method that adds a card to a Player.hand. This method is now implemented in Main.deal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Class 5/15: created the addCard method that adds a card to a Player.hand. This method is now implemented in Main.deal." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="HW for 5/23: fixed the hand array going out of bounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW for 5/23: fixed the hand array going out of bounds" />
   </component>
 </project>
