@@ -1,5 +1,5 @@
 class Player {
-    Card[] hand = new Card[12]; //your hand as an array of different cards
+    Card[] hand = new Card[12]; //It's impossible to have more than 12 cards and not bust.
     String name;
     int handValue;
     int numCards;

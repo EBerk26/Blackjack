@@ -7,7 +7,8 @@ class Main {
     Player player = new Player();
     Player dealer = new Player();
     int numCardsDealt = 0;
-
+    int bank = 1000;
+    int pot;
      Main() {
         dealer.name = "Jeffrey the Dealer";
         dealer.isDealer = true;
@@ -21,6 +22,7 @@ class Main {
         initializeDeck();
         shuffle();
         deal();
+        betAsk();
         play();
     }
     public static void main(String[] args) {
@@ -87,8 +89,12 @@ class Main {
             System.out.print("The card you received is the ");
             deck[numCardsDealt].printInfoSameLine();
             System.out.println();
+            System.out.println("Your hand is now worth "+player.handValue);
             if(player.handValue>21){
                 System.out.println("You busted!");
+                reset();
+                betAsk();
+                play();
             } else {
                 numCardsDealt++;
                 play();
@@ -119,10 +125,24 @@ class Main {
                 System.out.println(player.name+" has a hand value of "+player.handValue);
                 if(dealer.handValue> player.handValue){
                     System.out.println(dealer.name+" wins!");
+                    reset();
+                    betAsk();
+                    play();
                 } else if (dealer.handValue< player.handValue){
                     System.out.println(player.name+" wins! Congratulations!");
+                    bank+=(2*pot);
+                    reset();
+                    betAsk();
+                    play();
                 } else{
                     System.out.println("Push! No one wins this round");
+                    bank+=pot;
+                    reset();
+                    betAsk();
+                    play();
+                }
+                if(bank<=0){
+                    System.out.println("You lose.");
                 }
             }
         }
@@ -133,5 +153,29 @@ class Main {
         } catch (InterruptedException e){
             //ignore the exception
         }
+    }
+    void reset(){
+         for(int x = 0; x<=11;x++){
+             player.hand[x] = new Card();
+             dealer.hand[x] = new Card();
+         }
+        pot = 0;
+        player.numAces = 0;
+        player.numCards = 0;
+        dealer.numAces = 0;
+        dealer.numCards = 0;
+        numCardsDealt = 0;
+        shuffle();
+        deal();
+    }
+    void betAsk(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How much do you want to bet? You have $"+bank);
+        int betAmount = Integer.valueOf(scanner.next());
+        if(betAmount>bank){
+            System.exit(0);
+        }
+        pot = betAmount;
+        bank -=betAmount;
     }
 }
