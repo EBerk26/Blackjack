@@ -118,6 +118,9 @@ class Main {
             if(dealer.handValue>21){
                 pause(400);
                 System.out.println(dealer.name+" busted!");
+                reset();
+                betAsk();
+                play();
             } else{
                 pause(400);
                 System.out.println(dealer.name+" stands");
@@ -171,7 +174,7 @@ class Main {
     void betAsk(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("How much do you want to bet? You have $"+bank);
-        int betAmount = Integer.valueOf(scanner.next());
+        int betAmount = Integer.parseInt(scanner.next());
         if(betAmount>bank){
             System.exit(0);
         }

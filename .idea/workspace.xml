@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="Class 5/23: Added the soft functionality for aces. The game is technically complete for one round. Next up is betting functionality and replayability.">
+    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="HW for 5/29: Added betting functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -155,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716467848407</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="HW for 5/29: Added betting functionality">
+      <option name="closed" value="true" />
+      <created>1716949183352</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716949183352</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -170,6 +178,7 @@
     <MESSAGE value="Class 5/15: created the addCard method that adds a card to a Player.hand. This method is now implemented in Main.deal." />
     <MESSAGE value="HW for 5/23: fixed the hand array going out of bounds" />
     <MESSAGE value="Class 5/23: Added the soft functionality for aces. The game is technically complete for one round. Next up is betting functionality and replayability." />
-    <option name="LAST_COMMIT_MESSAGE" value="Class 5/23: Added the soft functionality for aces. The game is technically complete for one round. Next up is betting functionality and replayability." />
+    <MESSAGE value="HW for 5/29: Added betting functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW for 5/29: Added betting functionality" />
   </component>
 </project>

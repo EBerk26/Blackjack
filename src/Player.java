@@ -46,6 +46,7 @@ class Player {
         if(handValue>21&&numAces>0){
             numAces--;
             handValue-=10;
+            System.out.println("You busted but an ace switched from 11 to 1");
         }
     }
 }
