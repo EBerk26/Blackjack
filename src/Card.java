@@ -5,6 +5,11 @@ class Card {
     Card(){
 
     }
+    Card(int param_value,String param_suit, String param_cardType){
+        value = param_value;
+        suit = param_suit;
+        cardType = param_cardType;
+    }
     void printInfo(){
         if(value<10) {
             System.out.println(value+" of "+suit+", worth "+value+" points");

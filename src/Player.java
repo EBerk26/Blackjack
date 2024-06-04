@@ -4,7 +4,8 @@ class Player {
     int handValue;
     int numCards;
     boolean isDealer;
-    int numAces = 0;
+    int numSoftAces = 0;
+    int numHardAces = 0;
     Player(){
         for(int x =0;x<hand.length;x++){
             hand[x] = new Card();
@@ -35,18 +36,21 @@ class Player {
         for (int x = 0;x<=11;x++){
             handValue+=hand[x].value;
         }
+        handValue-=numHardAces*10;
     }
     void addCard(Card param_card){
         hand[numCards] = param_card;
         numCards++;
         if(param_card.cardType.equals("ace")){
-            numAces++;
+            numSoftAces++;
         }
-        updateHandValue();
-        if(handValue>21&&numAces>0){
-            numAces--;
-            handValue-=10;
-            System.out.println("You busted but an ace switched from 11 to 1");
+        handValue+= param_card.value;
+        if(handValue>21&&numSoftAces>0){
+            numHardAces++;
+            if(!isDealer) {
+                System.out.println("You busted but an ace switched from 11 to 1");
+            }
+            updateHandValue();
         }
     }
 }

@@ -21,8 +21,11 @@ class Main {
         }
         initializeDeck();
         shuffle();
-        deal();
+        deck[1] = new Card(11,"spades","ace");
+        deck[0] = new Card(11,"spades","ace");
+        deck[4] = new Card(11,"","ace");
         betAsk();
+        deal();
         play();
     }
     public static void main(String[] args) {
@@ -118,6 +121,8 @@ class Main {
             if(dealer.handValue>21){
                 pause(400);
                 System.out.println(dealer.name+" busted!");
+                System.out.println(player.name+" wins! Congratulations!");
+                bank+=(2*pot);
                 reset();
                 betAsk();
                 play();
@@ -162,12 +167,16 @@ class Main {
              player.hand[x] = new Card();
              dealer.hand[x] = new Card();
          }
+        player.numHardAces = 0;
+        dealer.numHardAces = 0;
         pot = 0;
-        player.numAces = 0;
+        player.numSoftAces = 0;
         player.numCards = 0;
-        dealer.numAces = 0;
+        dealer.numSoftAces = 0;
         dealer.numCards = 0;
         numCardsDealt = 0;
+        player.handValue = 0;
+        dealer.handValue = 0;
         shuffle();
         deal();
     }

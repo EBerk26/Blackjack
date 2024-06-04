@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="HW for 5/29: Added betting functionality">
+    <list default="true" id="54136547-65a3-427b-99c2-099fd2023c73" name="Changes" comment="Fixed the fact that it ended when the dealer busted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
@@ -163,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716949183352</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed the fact that it ended when the dealer busted.">
+      <option name="closed" value="true" />
+      <created>1717292184523</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717292184523</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +188,7 @@
     <MESSAGE value="HW for 5/23: fixed the hand array going out of bounds" />
     <MESSAGE value="Class 5/23: Added the soft functionality for aces. The game is technically complete for one round. Next up is betting functionality and replayability." />
     <MESSAGE value="HW for 5/29: Added betting functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW for 5/29: Added betting functionality" />
+    <MESSAGE value="Fixed the fact that it ended when the dealer busted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the fact that it ended when the dealer busted." />
   </component>
 </project>
