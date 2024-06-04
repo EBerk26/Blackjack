@@ -21,9 +21,6 @@ class Main {
         }
         initializeDeck();
         shuffle();
-        deck[1] = new Card(11,"spades","ace");
-        deck[0] = new Card(11,"spades","ace");
-        deck[4] = new Card(11,"","ace");
         betAsk();
         deal();
         play();
